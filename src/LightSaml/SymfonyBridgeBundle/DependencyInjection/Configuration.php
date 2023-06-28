@@ -23,10 +23,11 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $root = $treeBuilder->root('light_saml_symfony_bridge');
+        $treeBuilder = new TreeBuilder('light_saml_symfony_bridge');
 
-        $root->children()
+        $treeBuilder
+            ->getRootNode()
+            ->children()
             ->arrayNode('own')
                 ->isRequired()
                 ->children()
