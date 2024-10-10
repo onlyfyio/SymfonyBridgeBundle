@@ -5,10 +5,10 @@ parameters:
 
 services:
     lightsaml.store.request:
-        factory: ["LightSaml\SymfonyBridgeBundle\Factory\RequestStateSessionStoreFactory", "create"]
+        factory: ['LightSaml\SymfonyBridgeBundle\Factory\RequestStateSessionStoreFactory', 'create']
 
     lightsaml.store.id_state:
         class: LightSaml\Store\Id\NullIdStore
 
     lightsaml.store.sso_state:
-        factory: ["LightSaml\SymfonyBridgeBundle\Factory\SsoStateSessionStoreFactory", "create"]
+        factory: ['LightSaml\SymfonyBridgeBundle\Factory\SsoStateSessionStoreFactory', 'create']
