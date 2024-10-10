@@ -5,17 +5,10 @@ parameters:
 
 services:
     lightsaml.store.request:
-        class: LightSaml\Store\Request\RequestStateSessionStore
-        arguments:
-            - "@session"
-            - "%lightsaml.store.request_session_prefix%"
-            - "%lightsaml.store.request_session_sufix%"
+        factory: ["LightSaml\SymfonyBridgeBundle\Factory\RequestStateSessionStoreFactory", "create"]
 
     lightsaml.store.id_state:
         class: LightSaml\Store\Id\NullIdStore
 
     lightsaml.store.sso_state:
-        class: LightSaml\Store\Sso\SsoStateSessionStore
-        arguments:
-            - "@session"
-            - "%lightsaml.store.sso_state_session_key%"
+        factory: ["LightSaml\SymfonyBridgeBundle\Factory\SsoStateSessionStoreFactory", "create"]
