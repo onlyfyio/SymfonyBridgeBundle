@@ -20,16 +20,16 @@
     },
     "require": {
         "php": ">=8.2.3",
-        "symfony/framework-bundle": "~4.0|~5.0|~6.0",
-        "symfony/dependency-injection": "~4.0|~5.0|~6.0",
-        "symfony/yaml": "~4.0|~5.0|~6.0",
-        "litesaml/lightsaml": "^3.0"
+        "symfony/framework-bundle": "~4.0|~5.0|~6.0|~7.0",
+        "symfony/dependency-injection": "~4.0|~5.0|~6.0|~7.0",
+        "symfony/yaml": "~4.0|~5.0|~6.0|~7.0",
+        "litesaml/lightsaml": "^4.7.1"
     },
     "require-dev": {
-        "symfony/browser-kit": "~4.0|~5.0",
-        "symfony/finder": "~4.0|~5.0",
-        "symfony/filesystem": "~4.0|~5.0",
-        "symfony/routing": "~4.0|~5.0",
+        "symfony/browser-kit": "~4.0|~5.0|~6.0|~7.0",
+        "symfony/finder": "~4.0|~5.0|~6.0|~7.0",
+        "symfony/filesystem": "~4.0|~5.0|~6.0|~7.0",
+        "symfony/routing": "~4.0|~5.0|~6.0|~7.0",
         "phpunit/phpunit": "^9.6"
     },
     "config": {
