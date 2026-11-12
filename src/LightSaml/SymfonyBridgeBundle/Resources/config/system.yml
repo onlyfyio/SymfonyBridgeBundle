@@ -8,5 +8,30 @@ services:
     lightsaml.system.event_dispatcher:
         class: Symfony\Component\EventDispatcher\EventDispatcher
 
+    lightsaml.system.psr_event_dispatcher:
+        class: LightSaml\SymfonyBridgeBundle\Bridge\PsrEventDispatcherAdapter
+        arguments:
+            - "@lightsaml.system.event_dispatcher"
+
+    lightsaml.system.server_request_factory:
+        class: Http\Factory\Guzzle\ServerRequestFactory
+
+    lightsaml.system.stream_factory:
+        class: Http\Factory\Guzzle\StreamFactory
+
+    lightsaml.system.uploaded_file_factory:
+        class: Http\Factory\Guzzle\UploadedFileFactory
+
+    lightsaml.system.response_factory:
+        class: Http\Factory\Guzzle\ResponseFactory
+
+    lightsaml.system.psr_http_factory:
+        class: Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory
+        arguments:
+            - "@lightsaml.system.server_request_factory"
+            - "@lightsaml.system.stream_factory"
+            - "@lightsaml.system.uploaded_file_factory"
+            - "@lightsaml.system.response_factory"
+
     lightsaml.system.logger:
         class: Psr\Log\NullLogger

@@ -2,7 +2,8 @@
 
 namespace LightSaml\SymfonyBridgeBundle\Factory;
 
-use LightSaml\Store\Sso\SsoStateSessionStore;
+use LightSaml\Store\Sso\SsoStateStoreInterface;
+use LightSaml\SymfonyBridgeBundle\Store\SymfonySessionSsoStateStore;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 class SsoStateSessionStoreFactory
@@ -13,9 +14,9 @@ class SsoStateSessionStoreFactory
     ) {
     }
 
-    public function create(): SsoStateSessionStore
+    public function create(): SsoStateStoreInterface
     {
-        return new SsoStateSessionStore(
+        return new SymfonySessionSsoStateStore(
             $this->requestStack->getCurrentRequest()->getSession(),
             $this->ssoStateSessionKey,
         );

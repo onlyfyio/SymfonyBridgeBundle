@@ -15,8 +15,11 @@ services:
         class: LightSaml\SymfonyBridgeBundle\Bridge\Container\SystemContainer
         arguments:
             - "@request_stack"
+            - "@lightsaml.system.psr_http_factory"
+            - "@lightsaml.system.response_factory"
+            - "@lightsaml.system.stream_factory"
             - "@lightsaml.system.time_provider"
-            - "@lightsaml.system.event_dispatcher"
+            - "@lightsaml.system.psr_event_dispatcher"
             - "@lightsaml.system.logger"
 
     lightsaml.container.party:

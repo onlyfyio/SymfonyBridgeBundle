@@ -13,85 +13,53 @@ namespace LightSaml\SymfonyBridgeBundle\Bridge\Container;
 
 use LightSaml\Build\Container\SystemContainerInterface;
 use LightSaml\Provider\TimeProvider\TimeProviderInterface;
+use Psr\EventDispatcher\EventDispatcherInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class SystemContainer implements SystemContainerInterface
 {
-    /** @var RequestStack */
-    private $requestStack;
-
-    /** @var SessionInterface */
-    private $session;
-
-    /** @var TimeProviderInterface */
-    private $timeProvider;
-
-    /** @var EventDispatcherInterface */
-    private $eventDispatcher;
-
-    /** @var LoggerInterface */
-    private $logger;
-
-    /**
-     * @param RequestStack             $requestStack
-     * @param SessionInterface         $session
-     * @param TimeProviderInterface    $timeProvider
-     * @param EventDispatcherInterface $eventDispatcher
-     * @param LoggerInterface          $logger
-     */
     public function __construct(
-        RequestStack $requestStack,
-        TimeProviderInterface $timeProvider,
-        EventDispatcherInterface $eventDispatcher,
-        LoggerInterface $logger
+        private readonly RequestStack $requestStack,
+        private readonly PsrHttpFactory $psrHttpFactory,
+        private readonly ResponseFactoryInterface $responseFactory,
+        private readonly StreamFactoryInterface $streamFactory,
+        private readonly TimeProviderInterface $timeProvider,
+        private readonly EventDispatcherInterface $eventDispatcher,
+        private readonly LoggerInterface $logger,
     ) {
-        $this->requestStack = $requestStack;
-        $this->session = $requestStack->getCurrentRequest()->getSession();
-        $this->timeProvider = $timeProvider;
-        $this->eventDispatcher = $eventDispatcher;
-        $this->logger = $logger;
     }
 
-    /**
-     * @return Request
-     */
-    public function getRequest()
+    public function getRequest(): ServerRequestInterface
     {
-        return $this->requestStack->getCurrentRequest();
+        return $this->psrHttpFactory->createRequest($this->requestStack->getCurrentRequest());
     }
 
-    /**
-     * @return SessionInterface
-     */
-    public function getSession()
+    public function getResponseFactory(): ResponseFactoryInterface
     {
-        return $this->session;
+        return $this->responseFactory;
     }
 
-    /**
-     * @return TimeProviderInterface
-     */
-    public function getTimeProvider()
+    public function getStreamFactory(): StreamFactoryInterface
+    {
+        return $this->streamFactory;
+    }
+
+    public function getTimeProvider(): TimeProviderInterface
     {
         return $this->timeProvider;
     }
 
-    /**
-     * @return EventDispatcherInterface
-     */
-    public function getEventDispatcher()
+    public function getEventDispatcher(): EventDispatcherInterface
     {
         return $this->eventDispatcher;
     }
 
-    /**
-     * @return LoggerInterface
-     */
-    public function getLogger()
+    public function getLogger(): LoggerInterface
     {
         return $this->logger;
     }
