@@ -24,19 +24,19 @@ services:
         class: LightSaml\Resolver\Endpoint\BindingEndpointResolver
 
     lightsaml.service.endpoint_resolver.descriptor_type:
-        class: LightSaml\Resolver\Endpoint\DescriptorTypeEndpointResolver
+        class: LightSaml\SymfonyBridgeBundle\Bridge\Endpoint\DescriptorTypeEndpointResolver
 
     lightsaml.service.endpoint_resolver.service_type:
-        class: LightSaml\Resolver\Endpoint\ServiceTypeEndpointResolver
+        class: LightSaml\SymfonyBridgeBundle\Bridge\Endpoint\ServiceTypeEndpointResolver
 
     lightsaml.service.endpoint_resolver.index:
-        class: LightSaml\Resolver\Endpoint\IndexEndpointResolver
+        class: LightSaml\SymfonyBridgeBundle\Bridge\Endpoint\IndexEndpointResolver
 
     lightsaml.service.endpoint_resolver.location:
-        class: LightSaml\Resolver\Endpoint\LocationEndpointResolver
+        class: LightSaml\SymfonyBridgeBundle\Bridge\Endpoint\LocationEndpointResolver
 
     lightsaml.service.endpoint_resolver:
-        class: LightSaml\Resolver\Endpoint\CompositeEndpointResolver
+        class: LightSaml\SymfonyBridgeBundle\Bridge\Endpoint\CompositeEndpointResolver
         calls:
             - [add, ["@lightsaml.service.endpoint_resolver.binding"]]
             - [add, ["@lightsaml.service.endpoint_resolver.descriptor_type"]]
