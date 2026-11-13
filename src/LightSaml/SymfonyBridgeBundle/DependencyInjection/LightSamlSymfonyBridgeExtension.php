@@ -129,7 +129,7 @@ class LightSamlSymfonyBridgeExtension extends Extension
                     $config['own']['entity_id'],
                     $data['certificate'],
                     $data['key'],
-                    $data['password'],
+                    $data['password'] ?? '',
                 ]
             );
             $definition->addTag('lightsaml.own_credential_store');
