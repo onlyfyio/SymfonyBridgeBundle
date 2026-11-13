@@ -44,7 +44,7 @@ class PartyContainer implements PartyContainerInterface
     /**
      * @return EntityDescriptorStoreInterface
      */
-    public function getIdpEntityDescriptorStore()
+    public function getIdpEntityDescriptorStore(): EntityDescriptorStoreInterface
     {
         return $this->idpEntityDescriptorStore;
     }
@@ -52,7 +52,7 @@ class PartyContainer implements PartyContainerInterface
     /**
      * @return EntityDescriptorStoreInterface
      */
-    public function getSpEntityDescriptorStore()
+    public function getSpEntityDescriptorStore(): EntityDescriptorStoreInterface
     {
         return $this->spEntityDescriptorStore;
     }
@@ -60,7 +60,7 @@ class PartyContainer implements PartyContainerInterface
     /**
      * @return TrustOptionsStoreInterface
      */
-    public function getTrustOptionsStore()
+    public function getTrustOptionsStore(): TrustOptionsStoreInterface
     {
         return $this->trustOptionsStore;
     }

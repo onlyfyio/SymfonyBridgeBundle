@@ -45,7 +45,7 @@ class ProviderContainer implements ProviderContainerInterface
     /**
      * @return AttributeValueProviderInterface
      */
-    public function getAttributeValueProvider()
+    public function getAttributeValueProvider(): AttributeValueProviderInterface
     {
         return $this->attributeValueProvider;
     }
@@ -53,7 +53,7 @@ class ProviderContainer implements ProviderContainerInterface
     /**
      * @return SessionInfoProviderInterface
      */
-    public function getSessionInfoProvider()
+    public function getSessionInfoProvider(): SessionInfoProviderInterface
     {
         return $this->sessionInfoProvider;
     }
@@ -61,7 +61,7 @@ class ProviderContainer implements ProviderContainerInterface
     /**
      * @return NameIdProviderInterface
      */
-    public function getNameIdProvider()
+    public function getNameIdProvider(): NameIdProviderInterface
     {
         return $this->nameIdProvider;
     }

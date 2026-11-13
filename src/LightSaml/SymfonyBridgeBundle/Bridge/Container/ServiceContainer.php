@@ -17,6 +17,7 @@ use LightSaml\Resolver\Credential\CredentialResolverInterface;
 use LightSaml\Resolver\Endpoint\EndpointResolverInterface;
 use LightSaml\Resolver\Session\SessionProcessorInterface;
 use LightSaml\Resolver\Signature\SignatureResolverInterface;
+use LightSaml\Validator\Model\Assertion\AssertionTimeValidator;
 use LightSaml\Validator\Model\Assertion\AssertionTimeValidatorInterface;
 use LightSaml\Validator\Model\Assertion\AssertionValidatorInterface;
 use LightSaml\Validator\Model\NameId\NameIdValidatorInterface;
@@ -87,7 +88,7 @@ class ServiceContainer implements ServiceContainerInterface
     /**
      * @return AssertionValidatorInterface
      */
-    public function getAssertionValidator()
+    public function getAssertionValidator(): AssertionValidatorInterface
     {
         return $this->assertionValidator;
     }
@@ -95,7 +96,7 @@ class ServiceContainer implements ServiceContainerInterface
     /**
      * @return AssertionTimeValidatorInterface
      */
-    public function getAssertionTimeValidator()
+    public function getAssertionTimeValidator(): AssertionTimeValidator
     {
         return $this->assertionTimeValidator;
     }
@@ -103,7 +104,7 @@ class ServiceContainer implements ServiceContainerInterface
     /**
      * @return SignatureResolverInterface
      */
-    public function getSignatureResolver()
+    public function getSignatureResolver(): SignatureResolverInterface
     {
         return $this->signatureResolver;
     }
@@ -111,7 +112,7 @@ class ServiceContainer implements ServiceContainerInterface
     /**
      * @return EndpointResolverInterface
      */
-    public function getEndpointResolver()
+    public function getEndpointResolver(): EndpointResolverInterface
     {
         return $this->endpointResolver;
     }
@@ -119,7 +120,7 @@ class ServiceContainer implements ServiceContainerInterface
     /**
      * @return NameIdValidatorInterface
      */
-    public function getNameIdValidator()
+    public function getNameIdValidator(): NameIdValidatorInterface
     {
         return $this->nameIdValidator;
     }
@@ -127,7 +128,7 @@ class ServiceContainer implements ServiceContainerInterface
     /**
      * @return BindingFactoryInterface
      */
-    public function getBindingFactory()
+    public function getBindingFactory(): BindingFactoryInterface
     {
         return $this->bindingFactory;
     }
@@ -135,7 +136,7 @@ class ServiceContainer implements ServiceContainerInterface
     /**
      * @return SignatureValidatorInterface
      */
-    public function getSignatureValidator()
+    public function getSignatureValidator(): SignatureValidatorInterface
     {
         return $this->signatureValidator;
     }
@@ -143,7 +144,7 @@ class ServiceContainer implements ServiceContainerInterface
     /**
      * @return CredentialResolverInterface
      */
-    public function getCredentialResolver()
+    public function getCredentialResolver(): CredentialResolverInterface
     {
         return $this->credentialResolver;
     }
@@ -159,7 +160,7 @@ class ServiceContainer implements ServiceContainerInterface
     /**
      * @return SessionProcessorInterface
      */
-    public function getSessionProcessor()
+    public function getSessionProcessor(): SessionProcessorInterface
     {
         return $this->sessionProcessor;
     }

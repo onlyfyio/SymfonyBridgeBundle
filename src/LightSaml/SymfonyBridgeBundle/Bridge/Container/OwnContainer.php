@@ -45,7 +45,7 @@ class OwnContainer implements OwnContainerInterface
     /**
      * @return EntityDescriptorProviderInterface
      */
-    public function getOwnEntityDescriptorProvider()
+    public function getOwnEntityDescriptorProvider(): EntityDescriptorProviderInterface
     {
         return $this->entityDescriptorProvider;
     }
@@ -53,7 +53,7 @@ class OwnContainer implements OwnContainerInterface
     /**
      * @return CredentialInterface[]
      */
-    public function getOwnCredentials()
+    public function getOwnCredentials(): array
     {
         return $this->credentialStore->getByEntityId(
             $this->entityId

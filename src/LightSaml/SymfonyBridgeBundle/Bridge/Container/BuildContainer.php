@@ -73,7 +73,7 @@ class BuildContainer implements BuildContainerInterface
     /**
      * @return SystemContainerInterface
      */
-    public function getSystemContainer()
+    public function getSystemContainer(): SystemContainerInterface
     {
         return $this->systemsystemContainer;
     }
@@ -81,7 +81,7 @@ class BuildContainer implements BuildContainerInterface
     /**
      * @return PartyContainerInterface
      */
-    public function getPartyContainer()
+    public function getPartyContainer(): PartyContainerInterface
     {
         return $this->partypartyContainer;
     }
@@ -89,7 +89,7 @@ class BuildContainer implements BuildContainerInterface
     /**
      * @return StoreContainerInterface
      */
-    public function getStoreContainer()
+    public function getStoreContainer(): StoreContainerInterface
     {
         return $this->storeContainer;
     }
@@ -97,7 +97,7 @@ class BuildContainer implements BuildContainerInterface
     /**
      * @return ProviderContainerInterface
      */
-    public function getProviderContainer()
+    public function getProviderContainer(): ProviderContainerInterface
     {
         return $this->providerContainer;
     }
@@ -105,7 +105,7 @@ class BuildContainer implements BuildContainerInterface
     /**
      * @return CredentialContainerInterface
      */
-    public function getCredentialContainer()
+    public function getCredentialContainer(): CredentialContainerInterface
     {
         return $this->credentialContainer;
     }
@@ -113,7 +113,7 @@ class BuildContainer implements BuildContainerInterface
     /**
      * @return ServiceContainerInterface
      */
-    public function getServiceContainer()
+    public function getServiceContainer(): ServiceContainerInterface
     {
         return $this->serviceContainer;
     }
@@ -121,7 +121,7 @@ class BuildContainer implements BuildContainerInterface
     /**
      * @return OwnContainerInterface
      */
-    public function getOwnContainer()
+    public function getOwnContainer(): OwnContainerInterface
     {
         return $this->ownContainer;
     }

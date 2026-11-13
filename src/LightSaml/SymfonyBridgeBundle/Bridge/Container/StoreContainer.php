@@ -45,7 +45,7 @@ class StoreContainer implements StoreContainerInterface
     /**
      * @return RequestStateStoreInterface
      */
-    public function getRequestStateStore()
+    public function getRequestStateStore(): RequestStateStoreInterface
     {
         return $this->requestStateStore;
     }
@@ -53,7 +53,7 @@ class StoreContainer implements StoreContainerInterface
     /**
      * @return IdStoreInterface
      */
-    public function getIdStateStore()
+    public function getIdStateStore(): IdStoreInterface
     {
         return $this->idStateStore;
     }
@@ -61,7 +61,7 @@ class StoreContainer implements StoreContainerInterface
     /**
      * @return SsoStateStoreInterface
      */
-    public function getSsoStateStore()
+    public function getSsoStateStore(): SsoStateStoreInterface
     {
         return $this->ssoStateStore;
     }

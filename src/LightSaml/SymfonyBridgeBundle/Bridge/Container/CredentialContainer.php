@@ -30,7 +30,7 @@ class CredentialContainer implements CredentialContainerInterface
     /**
      * @return CredentialStoreInterface
      */
-    public function getCredentialStore()
+    public function getCredentialStore(): CredentialStoreInterface
     {
         return $this->credentialStore;
     }
